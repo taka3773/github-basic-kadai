@@ -1,0 +1,92 @@
+x@ekkusunoMacBook-Air workspace % mkdir git_challenge
+x@ekkusunoMacBook-Air workspace % ls
+fuga.txt	git_tutorial	kadai_004move	lesson		test.txt	TestFileD
+git_challenge	kadai_004	kadai_github	samurai		TestFileC
+x@ekkusunoMacBook-Air workspace % cd git_challenge 
+x@ekkusunoMacBook-Air git_challenge % ls
+x@ekkusunoMacBook-Air git_challenge % pwd
+/Users/x/workspace/git_challenge
+x@ekkusunoMacBook-Air git_challenge % git init 
+Initialized empty Git repository in /Users/x/workspace/git_challenge/.git/
+x@ekkusunoMacBook-Air git_challenge % ls
+x@ekkusunoMacBook-Air git_challenge % touch hello_world.txt
+x@ekkusunoMacBook-Air git_challenge % ls
+hello_world.txt
+x@ekkusunoMacBook-Air git_challenge % echo 'Hello, world!' > hello_world.txt 
+x@ekkusunoMacBook-Air git_challenge % cat hello_world.txt                   
+Hello, world!
+x@ekkusunoMacBook-Air git_challenge % git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	hello_world.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+x@ekkusunoMacBook-Air git_challenge % git add hello_world.txt 
+x@ekkusunoMacBook-Air git_challenge % git status             
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   hello_world.txt
+
+x@ekkusunoMacBook-Air git_challenge % git commit -m 'Hello, world!'
+[main (root-commit) 921a41c] Hello, world!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello_world.txt
+x@ekkusunoMacBook-Air git_challenge % echo 'こんにちは、世界!' >> hello_world.txt
+x@ekkusunoMacBook-Air git_challenge % cat hello_world.txt 
+Hello, world!
+こんにちは、世界!
+x@ekkusunoMacBook-Air git_challenge % git add hello_world.txt 
+x@ekkusunoMacBook-Air git_challenge % git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   hello_world.txt
+
+x@ekkusunoMacBook-Air git_challenge % git log                                   
+commit 921a41c2fdc2d91235042a0b8bd7bc0a58ec471a (HEAD -> main)
+Author: taka3773 <tt8379tt@gmail.com>
+Date:   Tue May 13 23:01:24 2025 +0900
+
+    Hello, world!
+x@ekkusunoMacBook-Air git_challenge % git commit -m 'こんにちは、世界!'         
+[main b610176] こんにちは、世界!
+ 1 file changed, 1 insertion(+)
+x@ekkusunoMacBook-Air git_challenge % git log
+commit b61017673c80f3acf2bc79dc96d099850972e4c9 (HEAD -> main)
+Author: taka3773 <tt8379tt@gmail.com>
+Date:   Tue May 13 23:08:52 2025 +0900
+
+    こんにちは、世界!
+
+commit 921a41c2fdc2d91235042a0b8bd7bc0a58ec471a
+Author: taka3773 <tt8379tt@gmail.com>
+Date:   Tue May 13 23:01:24 2025 +0900
+
+    Hello, world!
+x@ekkusunoMacBook-Air git_challenge % git status
+On branch main
+nothing to commit, working tree clean
+x@ekkusunoMacBook-Air git_challenge % git log
+commit b61017673c80f3acf2bc79dc96d099850972e4c9 (HEAD -> main)
+Author: taka3773 <tt8379tt@gmail.com>
+Date:   Tue May 13 23:08:52 2025 +0900
+
+    こんにちは、世界!
+
+commit 921a41c2fdc2d91235042a0b8bd7bc0a58ec471a
+Author: taka3773 <tt8379tt@gmail.com>
+Date:   Tue May 13 23:01:24 2025 +0900
+
+    Hello, world!
+x@ekkusunoMacBook-Air git_challenge % git log --oneline
+
+b610176 (HEAD -> main) こんにちは、世界!
+921a41c Hello, world!
